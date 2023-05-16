@@ -1,0 +1,237 @@
+
+#taskbar{
+    position: fixed;
+    min-height: 40px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    bottom: 0;
+    backdrop-filter: blur(50px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 0;
+    gap: 4px;
+    --hover-color: rgba(255, 255, 255, 0.6);
+    z-index: 2000;
+}
+#pinned-apps {
+    display: flex;
+    gap: 4px;
+}
+#taskbar :is(#startmenu, #taskbar-icon, #search, #quick-settings > div:not(#arrow)){
+    height: 38px;
+    width: 38px;
+    border-radius: 3.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+#taskbar :is(#startmenu, #taskbar-icon, #search, #quick-settings > div):not([dragging=true]):hover{
+    background: var(--hover-color);
+}
+#taskbar :is(#startmenu, #taskbar-icon, #search) :is(svg, img){
+    height: 28px;
+    width: 28px;
+    transition: transform .2s;
+}
+#taskbar #startmenu svg stop:first-of-type{
+    transition: stop-color .4s;
+}
+#taskbar :is(#startmenu, #taskbar-icon, #search):not([dragging=true]):active :is(svg, img){
+    transform: scale(.9);
+}
+#taskbar #startmenu:active svg stop:first-of-type{
+    stop-color: #0092d0;
+}
+#taskbar :is(#startmenu, #search)[active]{
+    background: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 0 .5px 1px #d4d4d49e;
+}
+#taskbar #taskbar-icon::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 3px;
+    width: 5px;
+    border-radius: 2px;
+    transition: width 200ms ease;
+}
+#taskbar #search[active] svg rect{
+    animation: search-fill 200ms 1 ease-in-out forwards;
+}
+#taskbar #search[active] svg stop:nth-of-type(1){
+    animation: search-gredient-first 200ms 1 ease-in-out forwards;
+}
+#taskbar #search[active] svg stop:nth-of-type(2){
+    animation: search-gredient-last 200ms 1 ease-in-out forwards;
+}
+@keyframes search-fill {
+    from{fill: #28282B;}
+    to{fill: #0092d0;}
+}
+@keyframes search-gredient-first {
+    from{stop-color: #28282B;}
+    to{stop-color: #0092d0;}
+}
+@keyframes search-gredient-last {
+    from{stop-color: #28282B;}
+    to{stop-color: #03ff85;}
+}
+
+#taskbar #taskbar-icon:not([dragging=true])[active][focused=true]{
+    background: rgba(255, 255, 255, 0.45);
+    box-shadow: 0 0 .5px 1px #d4d4d49e;
+}
+#taskbar #taskbar-icon[dragging]::after{
+    width: 0;
+}
+#taskbar #taskbar-icon:not([dragging=true])[active][focused=true]::after{
+    background: #007ff7;
+    width: 15px;
+}
+#taskbar #taskbar-icon:not([dragging=true])[active][focused=false]::after{
+    background: gray;
+    width: 5px;
+}
+#taskbar #taskbar-icon[active] img[shake-animation]{
+    animation: shake-taskbar-icon 500ms ease-in 1 forwards;
+}
+@keyframes shake-taskbar-icon {
+    0%{transform: translateY(0px);}
+    33%{transform: translateY(2px);animation-timing-function: ease-out;}
+    66%{transform: translateY(-4px); }
+    100%{transform: translateY(0px);}
+}
+#taskbar #taskbar-icon[dragging=true]{
+    z-index: 9;
+}
+#taskbar #taskbar-icon[dragging=true] img{
+    transform: scale(1.2);
+}
+#taskbar #title-box{
+    content: attr(app-title);
+    padding:  6px;
+    position: absolute;
+    bottom: 100%;
+    margin-bottom: 10px;
+    left: 0;
+    font-size: 13px;
+    background-color: rgba(255, 255, 255, .9);
+    border-radius: 4px;
+    box-shadow: 0px 5px 10px 0px #0000001c;
+    opacity: 0;
+    pointer-events: none;
+}
+#taskbar #title-box[show=true]{
+    animation: app-title-fade-in 200ms 1 linear forwards;
+}
+@keyframes app-title-fade-in{
+    from{opacity: 0}
+    to{opacity: 1}
+}
+#taskbar #title-box[show=false]{   
+    animation: app-title-fade-out 200ms 1 linear forwards;
+}
+@keyframes app-title-fade-out{
+    from{opacity: 1}
+    to{opacity: 0}
+}
+
+#taskbar #quick-settings{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    height: 100%;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+#taskbar #quick-settings #arrow{
+    width: 25px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+#taskbar #quick-settings #arrow[hover=false]{
+    background: none !important;
+}
+#taskbar #quick-settings #arrow img{
+    width: 90%;
+}
+#taskbar #quick-settings #arrow:not([hover=false]):hover:after{
+    opacity: 1;
+    transition-delay: 1s;
+    transition-timing-function: ease-out;
+}
+#taskbar #quick-settings #language{
+    text-align: center;
+}
+#taskbar #quick-settings :is(#multi-setting-box, #datetime){
+    width: auto !important;
+    padding: 0 7px;
+    gap: 8px;
+}
+#taskbar #quick-settings #multi-setting-box img{
+    height: 17px;
+    width: 17px;
+}
+#taskbar #quick-settings #datetime{
+    text-align: right;
+}
+#taskbar #quick-settings #arrow:after{
+    content: attr(custom-title);
+    position: absolute;
+    background-color: rgba(255, 255, 255);
+    border: 1px solid #a3a3a3;
+    padding: 0 3px;
+    min-width: fit-content;
+    top: 50%;
+    left: 90%;
+    white-space: nowrap;
+    text-align: center;
+    border-radius: 4px;
+    z-index: 100;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: opacity 200ms;
+    transition-delay: 0s;
+    transition-timing-function: ease-in;
+    opacity: 0;
+    color: gray;
+}
+#taskbar #quick-settings #arrow #background-running-task{
+    position: absolute;
+    background: rgba(245, 245, 245, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 7px;
+    border: 1px solid #a3a3a3;
+    bottom: 100%;
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 40px) ;
+    grid-auto-rows: 40px;
+    width: fit-content;
+    height: fit-content;
+    box-shadow: 0 2px 10px 1px #0000002d;
+    overflow: hidden;
+}
+#taskbar #quick-settings #arrow #background-running-task > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+#taskbar #quick-settings #arrow #background-running-task > div:hover{
+    background-color: white;
+}
+#taskbar #quick-settings #arrow #background-running-task > div img{
+    height: 20px;
+    width: 20px;
+}
+#taskbar #quick-settings #arrow[background-running-visible=false] #background-running-task{
+    display: none;
+}
