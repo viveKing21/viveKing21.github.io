@@ -1,6 +1,6 @@
 import ContextMenu from './contextmenu.js'
 import Events from './events.js'
-import Desktop from './Desktop.js';
+import Desktop from './desktop.js';
 import Setting from "./setting.js"
 import Taskbar from "./taskbar.js";
 import Startmenu from './startmenu.js';
