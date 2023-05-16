@@ -1,0 +1,174 @@
+{
+    "q_t_cut": {
+        "icon": "assets/windows/icons/cut.png"
+    },
+    "q_t_copy": {
+        "icon": "assets/windows/icons/copy.png"
+    },
+    "q_t_share": {
+        "icon": "assets/windows/icons/share_new_ui.png"
+    },
+    "q_t_rename": {
+        "icon": "assets/windows/icons/rename.png"
+    },
+    "q_t_delete": {
+        "icon": "assets/windows/icons/delete.png"
+    },
+    "open": {
+        "label": "Open",
+        "bold": true,
+        "type": "button",
+        "new_ui_icon": "assets/windows/icons/programe.png",
+        "new_ui_text": "Enter"
+    },
+    "onedrive": {
+        "label": "OneDrive",
+        "type": "dropdown",
+        "new_ui_icon": "assets/windows/icons/onedrive.png"
+    },
+    "open_file_location": {
+        "label": "Open file location",
+        "type": "button",
+        "new_ui_icon": "assets/windows/icons/folder.png"
+    },
+    "empty_to_recycle_bin": {
+        "label": "Empty to Recycle Bin",
+        "icon": "assets/app-icon/trash-empty.ico",
+        "type": "button"
+    },
+    "compress_to_zip_file": {
+        "label": "Compress to ZIP file",
+        "type": "button",
+        "new_ui_icon": "assets/windows/icons/zip.png"
+    },
+    "run_as_administrator": {
+        "label": "Run as administrator",
+        "icon": "assets/windows/icons/Shield.ico",
+        "type": "button",
+        "new_ui_icon": "assets/windows/icons/run_as_admin.png"
+    },
+    "troubleshoot_compatibility": {
+        "label": "Troubleshoot compatibility",
+        "type": "button"
+    },
+    "pin_to_taskbar": {
+        "label": "Pin to taskbar",
+        "type": "button"
+    },
+    "pin_to_quick_access":{
+        "label": "Pin to Quick Access",
+        "type": "button"
+    },
+    "pin_to_start": {
+        "label": "Pin to Start",
+        "type": "button",
+        "new_ui_icon": "assets/windows/icons/pin.png"
+    },
+    "manage":{
+        "label": "Manage",
+        "type": "button"
+    },
+    "map_network_drive":{
+        "label": "Map network drive...",
+        "type": "button"
+    },
+    "disconnect_network_drive":{
+        "label": "Disconnect network drive...",
+        "type": "button"
+    },
+    "copy_as_path": {
+        "label": "Copy as path",
+        "type": "button",
+        "new_ui_icon": "assets/windows/icons/copy_path.png"
+    },
+    "share": {
+        "label": "Share",
+        "icon": "assets/windows/icons/share.png",
+        "type": "button"
+    },
+    "restore_as_previous_versions": {
+        "label": "Restore as previous versions",
+        "type": "button"
+    },
+    "send_to": {
+        "label": "Send to",
+        "type": "dropdown"
+    },
+    "show_more_options": {
+        "label": "Show more options",
+        "type": "button",
+        "new_ui_icon": "assets/windows/icons/show_more.png",
+        "new_ui_text": "Shift+F10"
+    },
+    "cut": {
+        "label": "Cut",
+        "type": "button"
+    },
+    "copy": {
+        "label": "Copy",
+        "type": "button"
+    },
+    "create_shortcut": {
+        "label": "Create Shortcut",
+        "type": "button"
+    },
+    "delete": {
+        "label": "Delete",
+        "type": "button"
+    },
+    "rename": {
+        "label": "Rename",
+        "type": "button"
+    },
+    "properties": {
+        "label": "Properties",
+        "type": "button",
+        "new_ui_icon": "assets/windows/icons/properties.png",
+        "new_ui_text": "Alt+Enter"
+    },
+    "view": {
+        "label": "View",
+        "type": "dropdown",
+        "new_ui_icon": "assets/windows/icons/view.png"
+    },
+    "sort_by": {
+        "label": "Sort by",
+        "type": "dropdown",
+        "new_ui_icon": "assets/windows/icons/sortby.png"
+    },
+    "refresh": {
+        "label": "Refresh",
+        "type": "button",
+        "new_ui_icon": "assets/windows/icons/refresh.png"
+    },
+    "paste": {
+        "label": "Paste",
+        "type": "button",
+        "disabled": true
+    },
+    "undo_delete": {
+        "label": "Undo Delete",
+        "type": "button",
+        "text": "Ctrl+Z"
+    },
+    "open_in_windows_terminal": {
+        "label": "Open in Windows Terminal",
+        "type": "button",
+        "new_ui_icon": "assets/windows/icons/cmd.png"
+    },
+    "new": {
+        "label": "New",
+        "type": "dropdown",
+        "new_ui_icon": "assets/windows/icons/new.png"
+    },
+    "display_settings": {
+        "label": "Display settings",
+        "type": "button",
+        "new_ui_icon": "assets/windows/icons/display_settings.png"
+    },
+    "personalize": {
+        "label": "Personalize",
+        "type": "button",
+        "new_ui_icon": "assets/windows/icons/paint.png"
+    }
+}

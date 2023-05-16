@@ -1,0 +1,25 @@
+[
+    {
+        "id": "stc-1",
+        "name": "This PC",
+        "icon": "assets/app-icon/computer.ico",
+        "context_options": [
+            ["open", "pin_to_quick_access", "manage", "pin_to_start"],
+            ["map_network_drive", "disconnect_network_drive"],
+            ["create_shortcut", "delete", "rename"],
+            ["properties"]
+        ],
+        "type": "system-app"
+    },
+    {
+        "id": "stc-2",
+        "name": "Recycle Bin",
+        "icon": "assets/app-icon/trash-empty.ico",
+        "context_options": [
+            ["open", "empty_to_recycle_bin", "pin_to_start"],
+            ["create_shortcut", "rename"],
+            ["properties"]
+        ],
+        "type": "system-app"
+    }
+]

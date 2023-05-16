@@ -1,0 +1,14 @@
+[
+    {
+        "id": "in-1",
+        "name": "Chrome",
+        "icon": "assets/app-icon/chrome.png",
+        "context_options": "default"
+    },
+    {
+        "id": "in-2",
+        "name": "VS Code",
+        "icon": "assets/app-icon/vs-code.png",
+        "context_options": "default"
+    }
+]
