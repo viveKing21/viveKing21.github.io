@@ -1,0 +1,454 @@
+<style type="text/css">
+	@import url(https://fonts.googleapis.com/css?family=Odibee+Sans|Open+Sans&display=swap);
+	.container
+	{
+		width:400px;
+		background:#ffffff;
+		border:1px solid #e2e2e2;
+		margin:auto;
+		margin-top:100px;
+		padding:10px;
+		padding-top:0;
+		font-family: 'Open Sans', sans-serif;
+		padding-bottom:9px;
+	}
+	h1
+	{
+		text-align:center;
+		font-family: 'Odibee Sans', cursive;
+		letter-spacing: 2px;
+		color: #757575
+	}
+	h1 span
+	{
+		color:#ff4343
+	}
+	input
+	{
+		width:100%;
+		height:20px;
+		margin-top:5px;
+		padding:5px;
+		padding-top:10px;
+		padding-bottom:10px;
+		color:#838383;
+		border:1px solid #e2e2e2;
+		color:#969696
+	}
+	form
+	{
+		font-size:15px;
+		font-weight:bold;
+		color:#606060;
+		letter-spacing:1px
+	}
+	#btn
+	{
+		height:30px;
+		padding:0px;
+		background:skyblue;
+		border:none;
+		color:white;
+		font-size:15px;
+		margin-top:30px
+	}
+	#age
+	{
+		width:calc(100% - 2px);
+		height:150px;
+		background:;
+		border:1px solid #e2e2e2;
+		margin-top:20px;
+		overflow:hidden;
+		position:relative;
+		padding-bottom:20px
+	}
+	#age h4
+	{
+		text-align:center;
+		padding-top:0px;
+	}
+	#age div
+	{
+      width:calc(100%/3);
+      background:;
+      float:left;
+      text-align:center;
+	}
+	#age div span
+	{
+	  color:skyblue;
+      font-size:30px;
+	}
+	.extras
+	{
+		padding:1px;
+		width:30% !important;
+		background:#f4f4f4;
+		color:#919191;
+		border:1px solid #e2e2e2;
+		font-size:10px;
+		position:absolute;
+		bottom:-20;
+		right:10;
+		opacity:0;
+		transition:0.5s
+	}
+	input[type=submit]
+	{
+       outline:none;
+	}
+	input[type=submit]:hover
+	{
+		background-color:#53c4f2 !important
+	}
+	body
+	{
+		padding-bottom:100px
+	}
+	.Nb
+	{
+
+		width:50% !important;
+		background:
+	}
+	.Nb span
+	{
+		padding-right:10px;
+		margin-top:10px
+	}
+	.dayofnb
+	{
+      font-size:10px;
+      padding:5px;
+      position: absolute;
+      bottom:0;
+      left:calc(50% - 75px/2);
+      width:75px !important;
+      text-transform: capitalize;
+	}
+	table
+	{
+		width:100%;
+		font-family: 'Open Sans', sans-serif;
+		color: #606060;
+		font-weight: bold
+	}
+	table td
+	{
+		width:50%;
+		text-align: right;
+		font-size:14px
+	}
+	[data-value],.showday
+	{
+		color: skyblue;
+		text-align:left;
+		padding-left: 20px
+	}
+	.dropdown
+	{
+		width:50px;
+		padding:;
+		background:#f4f4f4;
+		color:#919191;
+		border:1px solid #e2e2e2;
+		font-size:10px;
+		text-align: center;
+		position: absolute;
+		margin-top:4px;
+		left:calc(50% - 25px);
+		cursor: pointer;
+		transition:0.2s;
+		display:none
+	}
+	.dropdown:hover
+	{
+		box-shadow:2px 1px 3px #ececec
+	}
+	.on{display: none}
+</style>
+<div class="container" >
+	<form name="form" onsubmit="return ageResult()">
+		<h1><span>Age</span> Calculator</h1>
+		Today's Date
+		<input type="date" name="TDate"><br><br>
+		Date of Birth
+		<input type="date" name="TDOB" value="2001-03-30" >
+		<input type="submit" id="btn" value="Calculate">
+		<div id="age">
+			<h4>Your Age</h4>
+			<div><span data-year>00</span><br>Years</div>
+			<div><span data-month>00</span><br>Months</div>
+			<div><span data-day>00</span><br>Days</div>
+			<div class="extras"></div>
+		</div>
+		<div class="dropdown" onclick="showExtras(this)">EXTRA</div>
+        <div  id="age" style="height:auto;padding-bottom:50px;margin-top:25px" class="on">
+        	<h4>Next Birthday</h4><div class="dayofnb"></div>
+        	<div class="Nb"><span data-nextBdMonth>00</span>Months</div>
+        	<div class="Nb"><span data-nextBdday>00</span>Days</div>
+        </div>
+        <div  id="age" style="height:auto;padding-bottom:50px" class="on">
+        	<h4>Time Spend on Earth</h4><div class="dayofnb"></div>
+        	<table>
+        		<tr><td>Total Years &nbsp;&nbsp;&nbsp;: </td><td data-value="Year">00</td></tr>
+        		<tr><td>Total Months &nbsp;&nbsp;&nbsp;: </td><td data-value="Month">00</td></tr>
+        		<tr><td>Total Days &nbsp;&nbsp;&nbsp;: </td><td data-value="Day">00</td></tr>
+        		<tr><td>Total Hours &nbsp;&nbsp;&nbsp;: </td><td data-value="Hour">00</td></tr>
+        		<tr><td>Total Minutes &nbsp;&nbsp;&nbsp;: </td><td data-value="Minute">00</td></tr>
+        		<tr><td>Total Seconds &nbsp;&nbsp;&nbsp;: </td><td data-value="Second">00</td></tr>
+        		<tr><td>Total Miliseconds &nbsp;&nbsp;&nbsp;: </td><td data-value="Milisec">00</td></tr>
+        	</table>
+        </div>
+        <div  id="age" style="height:auto;padding-bottom:50px" class="on">
+        	<h4>Next Birthdays</h4><div class="dayofnb"></div>
+        	<table>
+        		<tr><td><span class="NXB"></span>&nbsp;&nbsp;&nbsp;: </td><td class="showday">00</td></tr>
+        		<tr><td><span class="NXB"></span>&nbsp;&nbsp;&nbsp;: </td><td class="showday">00</td></tr>
+        		<tr><td><span class="NXB"></span>&nbsp;&nbsp;&nbsp;: </td><td class="showday">00</td></tr>
+        		<tr><td><span class="NXB"></span>&nbsp;&nbsp;&nbsp;: </td><td class="showday">00</td></tr>
+        		<tr><td><span class="NXB"></span>&nbsp;&nbsp;&nbsp;: </td><td class="showday">00</td></tr>
+        		<tr><td><span class="NXB"></span>&nbsp;&nbsp;&nbsp;: </td><td class="showday">00</td></tr>
+        		<tr><td><span class="NXB"></span>&nbsp;&nbsp;&nbsp;: </td><td class="showday">00</td></tr>
+        		<tr><td><span class="NXB"></span>&nbsp;&nbsp;&nbsp;: </td><td class="showday">00</td></tr>
+        		<tr><td><span class="NXB"></span>&nbsp;&nbsp;&nbsp;: </td><td class="showday">00</td></tr>
+        		<tr><td><span class="NXB"></span>&nbsp;&nbsp;&nbsp;: </td><td class="showday">00</td></tr>
+        	</table>
+        </div>
+	</form>
+	
+</div>
+<script type="text/javascript">
+//current date variables
+var fullDate=new Date();
+var curDate=fullDate.getDate();
+var curMonth=fullDate.getMonth()+1;
+var curYear=fullDate.getFullYear();
+if(curMonth < 10)
+	curMonth="0" + curMonth;
+if(curDate < 10)
+	curDate="0" + curDate;
+//selectors
+var todayDate=document.form.TDate;
+var Dob=document.form.TDOB;
+
+//outpur selectors
+let outputYear=document.querySelector("[data-year]");
+let outputMonth=document.querySelector("[data-month]");
+let outputDay=document.querySelector("[data-day]");
+let effect=document.querySelector(".extras");
+todayDate.value=curYear +"-"+ curMonth +"-"+ curDate;
+
+var NXBDshow=true;
+function ageResult()
+{
+document.querySelector(".dropdown").style.display="block";
+    
+    //effects
+    effect.style.bottom="-20px";
+
+	//getting values
+	var tdate=todayDate.value.split("-");
+	var yDob=Dob.value.split("-");
+    var leftdaysofDOB=new Date(yDob[0],yDob[1],0).getDate();
+    var leftdaysofthisBD=new Date(tdate[0],yDob[1],0).getDate();
+
+    //calculation
+    if(tdate[1] <= yDob[1])
+    {
+    	 NXBDshow=true;
+       outputYear.innerText=tdate[0] - yDob[0] - 1;
+       outputMonth.innerText=12 - yDob[1] + Number(tdate[1]) - 1;
+       outputDay.innerText=leftdaysofDOB - yDob[2] + Number(tdate[2]);
+       //on birthday
+       if(tdate[1] == yDob[1] && tdate[2] == yDob[2])
+       {
+       	 outputYear.innerText=tdate[0] - yDob[0];
+       	 outputMonth.innerText=0;
+       	 outputDay.innerText=0;
+       	 effect.innerText="HAPPY BIRTHDAY";
+    	 events();
+    	 NXBDshow=false;
+       }
+       //if birthday gone
+       else if(tdate[1] == yDob[1] && tdate[2] > yDob[2])
+       {
+         outputYear.innerText=tdate[0] - yDob[0];
+       	 outputMonth.innerText=0;
+       	 outputDay.innerText=tdate[2] - yDob[2] + leftdaysofDOB - yDob[2];
+       	 NXBDshow=false;
+       }
+
+    }
+
+    else
+    {
+    	outputYear.innerText=tdate[0] - yDob[0];
+    	outputMonth.innerText=tdate[1] - yDob[1] - 1;
+    	outputDay.innerText=Number(tdate[2]) + leftdaysofthisBD - yDob[2];
+    }
+    //cases
+    if(outputDay.innerText >= 31)
+    {
+    	outputMonth.innerText=Number(outputMonth.innerText) + 1;
+    	outputDay.innerText=outputDay.innerText - 31;
+    	effect.innerText="1 M (31 D) ADDED";
+    	events();
+    }
+
+
+
+//fornextBD
+let daysArray=["sunday","monday","tuesday","wednesday","thursday","friday","saturday"];
+let outputNXBDM=document.querySelector("[data-nextBdMonth]");
+let outputNXBDD=document.querySelector("[data-nextBdday]");
+var day=document.querySelector(".dayofnb");
+var dayofBD=new Date(tdate[0],yDob[1]-1,yDob[2]);
+   day.innerText=daysArray[dayofBD.getDay()];
+
+var leftDayofthisM=new Date(tdate[0],tdate[1],0).getDate();
+if(tdate[1] < yDob[1])
+{
+	outputNXBDM.innerText= yDob[1] - tdate[1] - 1;
+	outputNXBDD.innerText=  Number(leftDayofthisM - tdate[2]) + Number(yDob[2]);
+}
+else if(tdate[1] == yDob[1])
+{
+	outputNXBDM.innerText=0;
+	outputNXBDD.innerText=Number(yDob[2]) - Number(tdate[2]);
+	if(tdate[1] == yDob[1] && tdate[2] > yDob[2])
+	{
+		outputNXBDM.innerText=11 - Number(tdate[1]) + Number(yDob[1]);
+		outputNXBDD.innerText=Number(leftDayofthisM - tdate[2]) + Number(yDob[2]); 
+	}
+}
+else if(tdate[1] > yDob[1])
+{
+    outputNXBDM.innerText=11 - Number(tdate[1]) + Number(yDob[1]);
+    outputNXBDD.innerText=Number(leftDayofthisM - tdate[2]) + Number(yDob[2]); 
+}
+if(outputNXBDD.innerText >= 31)
+{
+	outputNXBDD.innerText=Number(outputNXBDD.innerText) - 31;
+	outputNXBDM.innerText=Number(outputNXBDM.innerText) + 1;
+}
+
+//time spent on earth
+
+let tseYear=document.querySelector("[data-value='Year']");
+let tseMonth=document.querySelector("[data-value='Month']");
+
+
+tseYear.innerText=outputYear.innerText;
+tseMonth.innerText=tseYear.innerText * 12 + Number(outputMonth.innerText);
+getTotalDays(yDob[0],tdate[0],yDob[1],tdate[1],tdate[2],yDob[2]);
+    //show with 0 if it's less than 10
+    if(outputYear.innerText < 10 && outputYear.innerText.length == 1)
+    	outputYear.innerText="0" + outputYear.innerText;
+    if(outputMonth.innerText < 10 && outputMonth.innerText.length == 1)
+    	outputMonth.innerText="0" + outputMonth.innerText;
+    if(outputDay.innerText < 10 && outputDay.innerText.length == 1)
+    	outputDay.innerText="0" + outputDay.innerText;
+
+     if(outputNXBDM.innerText < 10 && outputNXBDM.innerText.length == 1)
+    	outputNXBDM.innerText="0" + outputNXBDM.innerText;
+     if(outputNXBDD.innerText < 10 && outputNXBDD.innerText.length == 1)
+    	outputNXBDD.innerText="0" + outputNXBDD.innerText;
+
+	return false;
+}
+
+
+function events(){
+    	effect.style.opacity="1";
+    	effect.style.bottom="10px";
+    	setTimeout(function () {effect.style.bottom="-20px"; },10000);	
+}
+
+function getTotalDays(DByear,TDyear,DBmonth,TDmonth,todayDate,dobDate)
+{
+	var days=0,status=false;
+	let tseDay=document.querySelector("[data-value='Day']");
+	let tseHour=document.querySelector("[data-value='Hour']");
+	let tseMinute=document.querySelector("[data-value='Minute']");
+	let tseSecond=document.querySelector("[data-value='Second']");
+	let tseMilisec=document.querySelector("[data-value='Milisec']");
+	var getday=new Date(DByear,DBmonth,0).getDate() - dobDate;
+	for(var i=DByear; i<=TDyear; i++)
+	{
+		if(i==DByear)
+		{
+			for(var j=Number(DBmonth)+1; j<=12; j++)
+			{
+               days=new Date(i,j-1,0).getDate() + Number(days);
+			}
+			
+            status=true;
+		}
+		else if(status && i !=TDyear)
+		{
+			for(var j=1; j<=12; j++)
+			{
+               days=new Date(i,j-1,0).getDate() + Number(days);
+			}
+		}
+		else if(i==TDyear)
+		{
+			for(var j=1; j<TDmonth; j++)
+			{
+               days=new Date(i,j,0).getDate()  + Number(days);
+               
+			}
+		}
+	}
+	tseDay.innerText=days + getday + Number(todayDate);
+	tseHour.innerText=Number(tseDay.innerText)*24;
+	tseMinute.innerText=Number(tseHour.innerText)*60;
+	tseSecond.innerText=Number(tseMinute.innerText)*60;
+	tseMilisec.innerText=Number(tseSecond.innerText) * 1000;
+
+
+let daysArray=["sunday","monday","tuesday","wednesday","thursday","friday","saturday"];
+let monthsArray=["Jan","Feb","Mar","Apr",'May',"Jun","Jul","aug","sep","oct","nov","dec"];
+var j=0,yearChk;
+var NXBClasses=document.getElementsByClassName("NXB");
+
+for(var i=Number(TDyear) + 1; i <= Number(TDyear) + 10; i++)
+{
+	yearChk=i;
+	if(NXBDshow)
+	{
+		yearChk--;
+		if(yearChk==yearChk+10)
+			break;
+	}
+	var daysGet=new Date(yearChk,DBmonth-1,dobDate).getDay();
+	var selectors=document.getElementsByClassName("showday")[j].innerText=daysArray[Number(daysGet)];
+
+	NXBClasses[j].innerText=dobDate +" "+ monthsArray[Number(DBmonth-1)] +" "+ yearChk;
+	j++
+
+}
+
+}
+function showExtras(element){
+
+	var selectors=document.getElementsByClassName("on");
+	if(element.innerText=="EXTRA")
+	{
+	selectors[0].style.display="block";
+	selectors[1].style.display="block";
+	selectors[2].style.display="block";
+	element.innerText="CLOSE";
+	}
+	else
+	{
+	selectors[0].style.display="none";
+	selectors[1].style.display="none";
+	selectors[2].style.display="none";
+	element.innerText="EXTRA";
+	}
+
+}
+</script>

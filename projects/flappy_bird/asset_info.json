@@ -1,0 +1,108 @@
+{
+    "count": {
+        "height": 36,
+        "width": 24,
+        "src": [
+            "./assets/sprites/0.png",
+            "./assets/sprites/1.png",
+            "./assets/sprites/2.png",
+            "./assets/sprites/3.png",
+            "./assets/sprites/4.png",
+            "./assets/sprites/5.png",
+            "./assets/sprites/6.png",
+            "./assets/sprites/7.png",
+            "./assets/sprites/8.png",
+            "./assets/sprites/9.png"
+        ]
+    },
+    "background": {
+        "day": {
+            "height": 512,
+            "width": 288,
+            "src": "./assets/sprites/background-day.png"
+        },
+        "night": {
+            "height": 512,
+            "width": 288,
+            "src": "./assets/sprites/background-night.png"
+        }
+    },
+    "base": {
+        "grass": {
+            "height": 112,
+            "width": 336,
+            "src": "./assets/sprites/base.png"
+        }
+    },
+    "bird": {
+        "blue": {
+            "height": 24,
+            "width": 34,
+            "src": [
+                "./assets/sprites/bluebird-downflap.png",
+                "./assets/sprites/bluebird-midflap.png",
+                "./assets/sprites/bluebird-upflap.png"
+            ]
+        },
+        "yellow": {
+            "height": 24,
+            "width": 34,
+            "src": [
+                "./assets/sprites/yellowbird-downflap.png",
+                "./assets/sprites/yellowbird-midflap.png",
+                "./assets/sprites/yellowbird-upflap.png"
+            ]
+        },
+        "red": {
+            "height": 24,
+            "width": 34,
+            "src": [
+                "./assets/sprites/redbird-downflap.png",
+                "./assets/sprites/redbird-midflap.png",
+                "./assets/sprites/redbird-upflap.png"
+            ]
+        }
+    },
+    "pipe": {
+        "green": {
+            "head": {
+                "height": 24,
+                "width": 52,
+                "src": "./assets/sprites/pipe-green-head.png"
+            },
+            "body": {
+                "height": 320,
+                "width": 52,
+                "src": "./assets/sprites/pipe-green-body.png"
+            }
+        },
+        "red": {
+            "head": {
+                "height": 24,
+                "width": 52,
+                "src": "./assets/sprites/pipe-red-head.png"
+            },
+            "body": {
+                "height": 320,
+                "width": 52,
+                "src": "./assets/sprites/pipe-red-body.png"
+            }
+        }
+    },
+    "gameover": {
+       "height": 42,
+       "width": 192,
+       "src": "./assets/sprites/gameover.png"
+    },
+    "gamestart": {
+       "height": 267,
+       "width": 184,
+       "src": "./assets/sprites/message.png"
+    },
+    "sound": {
+        "die": "./assets/audio/die.wav",
+        "point": "./assets/audio/point.wav",
+        "swoosh": "./assets/audio/swoosh.wav"
+    }
+    
+}

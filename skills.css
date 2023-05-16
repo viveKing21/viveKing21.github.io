@@ -1,0 +1,36 @@
+.skill h4{
+    margin: 0;
+}
+.skill .bar{
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    color: #005D92;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.skill .bar div:first-of-type{
+    display: flex;
+}
+.skill .bar div:first-of-type .label{
+    flex: 1;
+}
+.skill .bar .percent-bar{
+    height: 15px;
+    width: 100%;
+    background-color: #4dbaf932;
+    border-radius: 5px;
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.skill .bar .percent-bar::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: var(--p, 50%);
+    background-color: #4DB9F9;
+    left: 0;
+    top: 0;
+}
