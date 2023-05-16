@@ -1,0 +1,92 @@
+<style>
+	.wrapper{
+		height:100%;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		perspective: 1000px;
+	}
+	.cube{
+        height: 100px;
+		width: 100px;
+		position: relative;
+        transform-style: preserve-3d;
+	}
+	.cube > img{
+		position: absolute;
+		height:100%;
+		width: 100%;
+		opacity: 0.9;
+	}
+	.cube > img:nth-child(2){
+		transform: translateZ(0px);
+	}
+	.cube > img:nth-child(2){
+		transform-origin: left;
+		transform: rotateY(-90deg);
+	}
+	.cube > img:nth-child(3){
+		transform-origin: right;
+		transform: rotateY(90deg);
+	}
+	.cube > img:nth-child(4){
+		transform-origin: top;
+		transform: rotateX(90deg);
+	}
+	.cube > img:nth-child(5){
+		transform-origin: bottom;
+		transform: rotateX(-90deg);
+	}
+	.cube > img:nth-child(6){
+		transform: translateZ(100px)
+	}
+	.Animate_play{
+		animation:loop 1s infinite linear; 
+        animation-play-state: running;
+	}
+	.Animate_pause{
+		animation:loop 0s infinite linear; 
+        animation-play-state: paused;
+	}
+	@keyframes loop
+	{
+		from{transform: rotate3d(1, 1, 1, 0deg);}
+		to{transform: rotate3d(1, 1, 1, 360deg);}
+	}
+</style>
+
+<div class='wrapper'>
+    <div class="cube Animate_pause" onclick="ThrowDise()">
+			<img src='images/1.png'/>
+			<img src='images/2.png'/>
+			<img src='images/3.png'/>
+			<img src='images/4.png'/>
+			<img src='images/5.png'/>
+			<img src='images/6.png'/>
+	</div>
+</div>
+<script>
+	let stopAt=['transform:rotateX(180deg);transform-origin:center',
+	            'transform:rotateY(90deg);transform-origin:left',
+				'transform:rotateY(-90deg);transform-origin:right',
+				'transform:rotateX(270deg);transform-origin:top',
+				'transform:rotateX(90deg);transform-origin:bottom',
+				'transform:rotateX(0deg);transform-origin:center']
+	let diseNum=1
+	let Cube=document.querySelector('.cube')
+	const ThrowDise=()=>{
+			Cube.removeAttribute('style')
+			Cube.classList.add('Animate_play')
+		    Cube.classList.remove('Animate_pause')
+
+		diseNum=Math.floor(Math.random() * (7 - 1) + 1) > 6 ? 6:Math.floor(Math.random() * (7 - 1) + 1)
+		setTimeout(()=>{
+			Cube.classList.remove('Animate_play')
+			Cube.classList.remove('Animate_pause')
+			Cube.style.cssText=stopAt[diseNum-1]
+		},3000)
+		
+	}
+	
+</script>

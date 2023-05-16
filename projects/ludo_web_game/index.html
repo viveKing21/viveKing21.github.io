@@ -1,0 +1,454 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="./style/style.css" rel="stylesheet" />
+<div class="screen">
+    <div class="selectBox">
+        <div style="height: 60px;display: flex;align-items: center;justify-content: center;padding: 10;font-family: 'Anton', sans-serif;">
+            <img src='images/ludo.png' style="height:40px;width:40px;"/>
+            <span style='font-size:25px;letter-spacing:1px;padding-left:10;'>LUDO WEB</span>
+        </div>
+        <div style="display: flex;flex-grow: 1;padding: 20;flex-direction: column;">
+            <div class="selectorBtn" onclick="SelectMode(0)">Two Players (DUO)</div>
+            <div class="selectorBtn" onclick="SelectMode(1)">Three Players (DUO+1)</div>
+            <div class="selectorBtn" onclick="SelectMode(2)">Four Players (SQUAD)</div>
+
+          <div style="margin-top: 20;">
+            <span style='font-size:small;'>SELECT COLORS</span>
+            <div style="padding-top: 10;width:100%;display: flex;justify-content: space-between;">
+                  <div id='selectColor' style="--color:yellow" name='Yellow' onclick='colorSel(this,0)'></div>
+                  <div id='selectColor' style="--color:#16dc07" name='Green' onclick='colorSel(this,1)'></div>
+                  <div id='selectColor' style="--color:red" name='Red' onclick='colorSel(this,2)'></div>
+                  <div id='selectColor' style="--color:#058cff" name='Blue' onclick='colorSel(this,3)'></div>
+            </div>
+          </div>
+          <div style='flex-grow: 1;'></div>
+          <input type='button' value='Start' id='startGame'/>
+        </div>
+    </div>
+    <div class="loader">
+        <img src='images/ludo.png' class='image'/>
+        <span>Loading...</span>
+    </div>
+</div>
+<div class="mainContainer">
+<div class='container'>
+    <div class="home green">
+        <div class='green-winner'></div>
+        <div stand='green-1'>
+            <div class="green-piece" onclick="Green.runMe(this,1)" piece='green' standAt='green-1' player='2'></div>
+        </div>
+        <div stand='green-2'>
+            <div class="green-piece" onclick="Green.runMe(this,2)" piece='green' standAt='green-2' player='2'></div>
+        </div>
+        <div stand='green-3'>
+            <div class="green-piece" onclick="Green.runMe(this,3)" piece='green' standAt='green-3' player='2'></div>
+        </div>
+        <div stand='green-4'>
+            <div class="green-piece" onclick="Green.runMe(this,4)" piece='green' standAt='green-4' player='2'></div>
+        </div>
+    </div>
+    <div class="box" red-path='50' green-path='11' yellow-path='24' blue-path='37'></div>
+    <div class="box" red-path='51' green-path='12' yellow-path='25' blue-path='38'><i class="fas fa-arrow-down"></i></div>
+    <div class="box" green-path='13' yellow-path='26' blue-path='39'></div>
+    <div class="home red">
+        <div class='red-winner'></div>
+        <div stand='red-1'>
+            <div class="red-piece" onclick="Red.runMe(this,1)" piece='red' standAt='red-1' player='3'></div>
+        </div>
+        <div stand='red-2'>
+            <div class="red-piece" onclick="Red.runMe(this,2)" piece='red' standAt='red-2' player='3'></div>
+        </div>
+        <div stand='red-3'>
+            <div class="red-piece" onclick="Red.runMe(this,3)" piece='red' standAt='red-3' player='3'></div>
+        </div>
+        <div stand='red-4'>
+            <div class="red-piece" onclick="Red.runMe(this,4)" piece='red' standAt='red-4' player='3'></div>
+        </div>
+    </div>
+    <div class="box" red-path='49' green-path='10' yellow-path='23' blue-path='36'></div>
+    <div class="box" red-path='52' color='red-path'></div>
+    <div class="box" red-path='1' green-path='14' yellow-path='27' blue-path='40' color='red-path' safe></div>
+    <div class="box" red-path='48' green-path='9' yellow-path='22' blue-path='35'><i class="fas fa-star" safe></i></div>
+    <div class="box" red-path='53' color='red-path'></div>
+    <div class="box" red-path='2' green-path='15' yellow-path='28' blue-path='41'></div>
+    <div class="box" red-path='47' green-path='8' yellow-path='21' blue-path='34'></div>
+    <div class="box" red-path='54' color='red-path'></div>
+    <div class="box" red-path='3' green-path='16' yellow-path='29' blue-path='42'></div>
+    <div class="box" red-path='46' green-path='7' yellow-path='20' blue-path='33'></div>
+    <div class="box" red-path='55' color='red-path'></div>
+    <div class="box" red-path='4' green-path='17' yellow-path='30' blue-path='43'></div>
+    <div class="box" red-path='45' green-path='6' yellow-path='19'  blue-path='32'></div>
+    <div class="box" red-path='56' color='red-path'></div>
+    <div class="box" red-path='5' green-path='18' yellow-path='31' blue-path='44'></div>
+    <div class="box" red-path='39' yellow-path='13' blue-path='26'></div>
+    <div class="box" red-path='40' color='green-path' green-path='1' yellow-path='14' blue-path='27' safe></div>
+    <div class="box" red-path='41' green-path='2' yellow-path='15' blue-path='28'></div>
+    <div class="box" red-path='42' green-path='3' yellow-path='16' blue-path='29'></div>
+    <div class="box" red-path='43' green-path='4' yellow-path='17' blue-path='30'></div>
+    <div class="box" red-path='44' green-path='5' yellow-path='18' blue-path='31'></div>
+    <div class="middle">
+        <div red-path='57' ></div>
+        <div  green-path='57'></div>
+        <div  blue-path='57'></div>
+        <div yellow-path='57'></div>
+    </div>
+    <div class="box" red-path='6' green-path='19' yellow-path='32' blue-path='45'></div>
+    <div class="box" red-path='7' green-path='20' yellow-path='33' blue-path='46'></div>
+    <div class="box" red-path='8' green-path='21' yellow-path='34' blue-path='47'></div>
+    <div class="box" red-path='9' green-path='22' yellow-path='35' blue-path='48'><i class="fas fa-star" safe></i></div>
+    <div class="box" red-path='10' green-path='23' yellow-path='36' blue-path='49'></div>
+    <div class="box" red-path='11' green-path='24' yellow-path='37' blue-path='50'></div>
+    <div class="box" red-path='38' green-path='51' yellow-path='12' blue-path='25'><i class="fas fa-arrow-right"></i></div>
+    <div class="box" green-path='52' color='green-path'></div>
+    <div class="box" green-path='53' color='green-path'></div>
+    <div class="box" green-path='54' color='green-path'></div>
+    <div class="box" green-path='55' color='green-path'></div>
+    <div class="box" green-path='56' color='green-path'></div>
+    <div class="box" color='blue-path' blue-path='56'></div>
+    <div class="box" color='blue-path' blue-path='55'></div>
+    <div class="box" color='blue-path' blue-path='54'></div>
+    <div class="box" color='blue-path' blue-path='53'></div>
+    <div class="box" color='blue-path' blue-path='52'></div>
+    <div class="box" red-path='12' green-path='25' yellow-path='38' blue-path='51'><i class="fas fa-arrow-left"></i></div>
+    <div class="box" red-path='37' green-path='50' yellow-path='11' blue-path='24'></div>
+    <div class="box" red-path='36' green-path='49' yellow-path='10' blue-path='23'></div>
+    <div class="box" red-path='35' green-path='48' yellow-path='9' blue-path='22'><i class="fas fa-star" safe></i></div>
+    <div class="box" red-path='34' green-path='47' yellow-path='8' blue-path='21'></div>
+    <div class="box" red-path='33' green-path='46' yellow-path='7' blue-path='20'></div>
+    <div class="box" red-path='32' green-path='45' yellow-path='6' blue-path='19'></div>
+    <div class="box" red-path='18' green-path='31' yellow-path='44' blue-path='5'></div>
+    <div class="box" red-path='17' green-path='30' yellow-path='43' blue-path='4'></div>
+    <div class="box" red-path='16' green-path='29' yellow-path='42' blue-path='3'></div>
+    <div class="box" red-path='15' green-path='28' yellow-path='41' blue-path='2'></div>
+    <div class="box" red-path='14' green-path='27' yellow-path='40' blue-path='1' color='blue-path' safe></div>
+    <div class="box" red-path='13' green-path='26' yellow-path='39'></div>
+    <div class="home yellow">
+        <div class='yellow-winner'></div>
+        <div stand='yellow-1'>
+            <div class="yellow-piece" onclick="Yellow.runMe(this,1)" piece='yellow' standAt='yellow-1' player='1'></div>
+        </div>
+        <div stand='yellow-2'>
+            <div class="yellow-piece" onclick="Yellow.runMe(this,2)" piece='yellow' standAt='yellow-2' player='1'></div>
+        </div>
+        <div stand='yellow-3'>
+            <div class="yellow-piece" onclick="Yellow.runMe(this,3)" piece='yellow' standAt='yellow-3' player='1'></div>
+       </div>
+        <div stand='yellow-4'>
+            <div class="yellow-piece" onclick="Yellow.runMe(this,4)" piece='yellow' standAt='yellow-4' player='1'></div>
+    </div>
+    </div>
+    <div class="box" red-path='31'  green-path='44' yellow-path='5' blue-path='18'></div>
+    <div class="box yellow-path"  color='yellow-path' yellow-path='56'></div>
+    <div class="box" red-path='19' green-path='32' yellow-path='45' blue-path='6'></div>
+    <div class="home blue">
+        <div class='blue-winner'></div>
+        <div stand='blue-1'>
+            <div class="blue-piece" onclick="Blue.runMe(this,1)" piece='blue' standAt='blue-1' player='4'></div>
+        </div>
+        <div stand='blue-2'>
+            <div class="blue-piece" onclick="Blue.runMe(this,2)" piece='blue' standAt='blue-2' player='4'></div>
+        </div>
+        <div stand='blue-3'>
+            <div class="blue-piece" onclick="Blue.runMe(this,3)" piece='blue' standAt='blue-3' player='4'></div>
+        </div>
+        <div stand='blue-4'>
+            <div class="blue-piece" onclick="Blue.runMe(this,4)" piece='blue' standAt='blue-4' player='4'></div>
+        </div>
+    </div>
+    <div class="box" red-path='30'  green-path='43' yellow-path='4' blue-path='17'></div>
+    <div class="box"  color='yellow-path' yellow-path='55'></div>
+    <div class="box" red-path='20' green-path='33' yellow-path='46' blue-path='7'></div>
+    <div class="box"  red-path='29' green-path='42' yellow-path='3' blue-path='16'></div>
+    <div class="box"  color='yellow-path' yellow-path='54'></div>
+    <div class="box" red-path='21' green-path='34'  yellow-path='47' blue-path='8'></div>
+    <div class="box" red-path='28'  green-path='41' yellow-path='2' blue-path='15'></div>
+    <div class="box" color='yellow-path' yellow-path='53'></div>
+    <div class="box" red-path='22' green-path='35' yellow-path='48' blue-path='9'><i class="fas fa-star" safe></i></div>
+    <div class="box"  red-path='27' green-path='40' color='yellow-path' yellow-path='1' blue-path='14' safe></div>
+    <div class="box" color='yellow-path' yellow-path='52'></div>
+    <div class="box" red-path='23' green-path='36' yellow-path='49' blue-path='10'></div>
+    <div class="box"  red-path='26' green-path='39' blue-path='13'></div>
+    <div class="box"  red-path='25' green-path='38' yellow-path='51' blue-path='12'><i class="fas fa-arrow-up"></i></div>
+    <div class="box" red-path='24' green-path='37' yellow-path='50' blue-path='11'></div>
+</div>
+</div>
+<div class="ludo" style="box-shadow: inset 0 0 10px #ffff00;background: white;">
+    <div class='wrapper'>
+        <div class="cube Animate_pause" onclick="ThrowDise(event)">
+                <img src='images/1.png'/>
+                <img src='images/2.png'/>
+                <img src='images/3.png'/>
+                <img src='images/4.png'/>
+                <img src='images/5.png'/>
+                <img src='images/6.png'/>
+        </div>
+    </div>
+</div>
+<script src="./script/dise.js" defer ></script>
+<script src="script/highlight.js"></script>
+<script>
+    //path tester
+    // Array.from(document.querySelectorAll('[red-path]')).map((elem,i)=>{
+    //     document.querySelector('[red-path="'+Number(i+1)+'"]').innerText=i+1
+    // })
+    // let turnOf={
+    //     yellow:false,
+    //     green:false,
+    //     red:false,
+    //     blue:false
+    // }
+    let victoryUpdater=[0,0,0,0]
+    let victory=0
+    let turnOf={
+        active:1,
+        activePlayers:[1,2,3,4]
+    }
+    let onRunPlay=new Audio('./sound/multimedia_button_click_006.mp3')
+    let onWin=new Audio('./sound/win.mp3')
+    let onDefeat=new Audio('./sound/defeat.mp3')
+    let Animator=1
+    let moveMe=true
+    class Players{
+        constructor(Pos,path){
+            this.PiecePos=Pos
+            this.path=path
+        }
+        runMe(elem,num){
+            
+        const Pos=this.PiecePos
+        const path=this.path
+        
+        if(moveMe && turnOf.activePlayers[turnOf.active-1]===parseInt(elem.getAttribute('player')))
+        {
+            
+               if(Pos[num-1][1]+diseNum==57)
+               {
+                this.VictoryFinder(elem)
+               }
+               if(diseNum==6 && !Pos[num-1][0])
+               {
+                onRunPlay.play()
+                Pos[num-1][0]=true
+                Pos[num-1][1]=1
+                document.querySelector('['+path+'="'+Pos[num-1][1]+'"]').appendChild(elem)
+                moveMe=false  
+                if(diseNum !== 6 )
+                {
+                    turnOf.active=turnOf.active==turnOf.activePlayers.length ? 1:turnOf.active+1
+                    turnOfPlayer()
+                }
+                
+               }
+               else if(Pos[num-1][0] && diseNum <= (57-Pos[num-1][1]))
+               {
+               const Interval=setInterval(()=>{
+               Pos[num-1][1]++
+               document.querySelector('['+path+'="'+Pos[num-1][1]+'"]').appendChild(elem)
+               if(Animator >= diseNum)
+               {
+                if(diseNum !== 6 && Pos[num-1][1]!==57 && victoryUpdater[Number(elem.getAttribute('player')-1)] !==4)
+                {
+                    turnOf.active=turnOf.active==turnOf.activePlayers.length ? 1:turnOf.active+1
+                    turnOfPlayer()
+                }
+                 
+                 clearInterval(Interval)
+                 Animator=1
+                 this.RemovePlayer(Pos[num-1][1],path,elem)
+                 document.querySelector('.ludo').style.setProperty('background','white')
+               }
+               else
+                Animator++ 
+                onRunPlay.play()
+              
+               },500)
+               moveMe=false     
+            }
+        }
+    }
+     RemovePlayer(newPos,path,elem){
+         let pieces=[]
+         const pieceName=elem.getAttribute('piece')
+         const Elements=document.querySelector('['+path+'="'+newPos+'"]')
+         if(!Elements.hasAttribute('safe'))
+             for(let i=0; i<Elements.childNodes.length; i++)
+             {
+                 let e=Elements.childNodes[i]
+                if(e.hasAttribute('piece') && e.getAttribute('piece')!==pieceName)
+               {
+                   pieces.push(e)
+               }
+               else if(e.hasAttribute('safe'))
+               {
+                pieces=[]
+                break;
+               }
+             }
+
+             if(pieces.length == 1)
+             {
+                let Prop=pieces[0].getAttribute('standAt').split('-')
+                 document.querySelector('[stand="'+pieces[0].getAttribute('standAt')+'"]').appendChild(pieces[0])
+                    
+                    if(Prop[0]=='yellow')
+                    Yellow.PiecePos[parseInt(Prop[1]-1)]=[false,null]
+                    else if(Prop[0]=='green')
+                    Green.PiecePos[parseInt(Prop[1]-1)]=[false,null]
+                    else if(Prop[0]=='red')
+                    Red.PiecePos[parseInt(Prop[1]-1)]=[false,null]
+                    else if(Prop[0]=='blue')
+                    Blue.PiecePos[parseInt(Prop[1]-1)]=[false,null]
+                    turnOf.activePlayers.map((e,i)=>{
+                        if(e==elem.getAttribute('player'))
+                        turnOf.active=i+1
+                    })
+                    onDefeat.play()
+                    turnOfPlayer()
+             }
+     }
+
+     VictoryFinder(elem){
+         let num=Number(elem.getAttribute('player'))
+        victoryUpdater[num-1]+=1
+        if(victoryUpdater[num-1]==4)
+        {
+            victory++
+            document.querySelector('.'+elem.getAttribute('piece')+'-winner').innerText=victory
+            document.querySelector('.'+elem.getAttribute('piece')+'-winner').classList.add('Won')
+            turnOf.activePlayers=turnOf.activePlayers.filter(ar=>ar!==num)
+            if(turnOf.activePlayers.length==0)
+            {
+                onWin.play()
+                //game over
+            }
+            turnOf.active=turnOf.active>=turnOf.activePlayers.length ? 1:turnOf.active+1
+            turnOfPlayer()
+        }
+        
+     }
+//class ends
+    }
+    function turnOfPlayer(){
+     let colors={
+         '1':'#ffff00',
+         '2':'#00e100',
+         '3':'#ff0000',
+         '4':'#008eff'
+     }
+     let num=turnOf.activePlayers[turnOf.active-1]
+     document.querySelector('.ludo').style.setProperty('box-shadow','inset 0 0 10px'+colors[num])
+     
+     
+     for(let i=1; i<=turnOf.activePlayers.length; i++)
+     {
+         if(turnOf.activePlayers[i-1]==num)
+         Array.from(document.querySelectorAll('[player="'+turnOf.activePlayers[i-1]+'"]')).map(ar=>ar.style.cssText='pointer-events:auto')
+            
+        else
+        Array.from(document.querySelectorAll('[player="'+turnOf.activePlayers[i-1]+'"]')).map(ar=>ar.style.cssText='pointer-events:none')
+     }
+    }
+    const Yellow=new Players([[false,null],[false,null],[false,null],[false,null]],'yellow-path')
+    const Green=new Players([[false,null],[false,null],[false,null],[false,null]],'green-path')
+    const Red=new Players([[false,null],[false,null],[false,null],[false,null]],'red-path')
+    const Blue=new Players([[false,null],[false,null],[false,null],[false,null]],'blue-path')
+
+
+    let Mode=null
+    let colorSelected=[]
+    function SelectMode(num){
+      let elem=document.getElementsByClassName('selectorBtn')
+      Array.from(elem).map((e,i)=>{
+         if(i==num)
+         {
+            gsap.to(e,{duration:.3,background:'#00adff',color:'white'})
+            gsap.fromTo(e,{duration:.3,scale:.9,ease:'bounce'},{duration:.3,scale:1,ease:'bounce'})
+            Mode=num+2
+         }
+         else
+         gsap.to(e,{duration:.3,background:'#f0f0f0',color:'black'})
+      })
+     let colorsAr=document.querySelectorAll('#selectColor')
+     colorSelected=[]
+    Array.from(colorsAr).map((ar,i)=>{
+        if(i<=num+1)
+        {
+            ar.classList.add('selectedColor')
+            ar.style.opacity='1'
+            colorSelected.push(i+1) 
+        }
+        else{
+            ar.classList.remove('selectedColor')
+            ar.style.opacity='.5'
+        }
+    })
+    }
+    function colorSel(elem,num){
+        if(Mode !== 4){
+            if(Mode !== null){
+            if(!elem.classList.contains('selectedColor'))
+            {
+                if(colorSelected.length!==Mode)
+                {
+                  elem.classList.add('selectedColor')
+                  colorSelected.push(num+1)  
+                  if(colorSelected.length==Mode){
+                    Array.from(document.querySelectorAll('#selectColor')).map(ar=>{
+                        if(!ar.classList.contains('selectedColor'))
+                        {
+                            ar.style.opacity='.5'
+                        }
+                        else
+                        ar.style.opacity='1'
+                    })
+                }
+                }
+                
+               
+            }
+            else
+            {
+                elem.classList.remove('selectedColor')
+                colorSelected=colorSelected.filter(ar=>ar!==num+1)
+                Array.from(document.querySelectorAll('#selectColor')).map(ar=>ar.style.opacity='1')
+            }
+            colorSelected.sort((a,b) => a-b)
+        }
+        else{
+            alert('Please select mode')
+        }
+        }
+        
+        gsap.fromTo(elem,{duration:.3,scale:.8,ease:'bounce'},{duration:.3,scale:1,ease:'bounce'})
+            
+    }
+    const startGame=document.getElementById('startGame')
+    startGame.onclick=()=>{
+        if(Mode !==null && Mode==colorSelected.length)
+        {
+            const timeline=gsap.timeline()
+            timeline.to(document.querySelector('.selectBox'),{y:'-100vh',display:'none'})
+            .to(document.querySelector('.loader'),{display:'flex'}) 
+            setTimeout(()=>{
+                 turnOf.activePlayers=colorSelected
+
+                 for(var i=1; i<=4; i++)
+                 {
+                     if(colorSelected.indexOf(i) == -1)
+                     document.querySelector('.'+document.querySelector('[player="'+i+'"]').getAttribute('piece')).style.cssText='opacity:.5;cursor:not-allowed'
+                 }
+                 gsap.to(document.querySelector('.screen'),{opacity:0,display:'none',scale:1.5,ease:'bounce'})
+                 moveMe=false
+            },5000)
+        
+        }
+        else{
+            alert('Please select mode & color properly')
+        }
+    }
+    window.onload=()=>{
+        gsap.to(document.querySelector('.screen'),{opacity:1,display:'flex',scale:1,ease:'bounce'})
+    }
+    HighLight('body',{background:'white',size:20,zoomIn:1,zoomOut:2})
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
