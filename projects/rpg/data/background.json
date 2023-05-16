@@ -1,0 +1,60 @@
+{
+    "forest": {
+        "width": 272,
+        "height": 160,
+        "images": [
+            "parallax-forest-back-trees.png",
+            "parallax-forest-lights.png",
+            "parallax-forest-middle-trees.png",
+            "parallax-forest-front-trees.png"
+        ],
+        "sound": "forest.wav"
+    },
+    "mountains": {
+        "width": 272,
+        "height": 160,
+        "images": [
+            "parallax-mountain-bg.png",
+            "parallax-mountain-mountains.png",
+            "parallax-mountain-montain-far.png",
+            "parallax-mountain-trees.png",
+            "parallax-mountain-foreground-trees.png"
+        ],
+        "sound": "mountains.mp3"
+    },
+    "industrial": {
+        "width": 272,
+        "height": 160,
+        "images": [
+            "skill-desc_0003_bg.png",
+            "skill-desc_0002_far-buildings.png",
+            "skill-desc_0001_buildings.png",
+            "skill-desc_0000_foreground.png"
+        ],
+        "sound": "mushroom-dance.ogg"
+    },
+    "bulkhead": {
+        "width": 352,
+        "height": 224,
+        "images": [
+            "bulkhead-walls-back.png",
+            "cols.png",
+            "bulkhead-walls-pipes.png",
+            "bulkhead-walls-platform.png"
+        ],
+        "sound": "mushroom-dance.ogg"
+    },
+    "countryside": {
+        "width": 272,
+        "height": 160,
+        "padding": {
+             "b": 20
+        },
+        "images": [
+            "country-platform-back.png",
+            "country-platform-forest.png",
+            "country-platform-tiles-example.png"
+        ],
+        "sound": "omen-chip.wav"
+    }
+}
