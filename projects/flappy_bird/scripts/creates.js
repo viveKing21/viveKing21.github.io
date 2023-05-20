@@ -151,7 +151,6 @@ const createPipe = (ctx, canvas, props) => {
     let pipes = [
         [withParams(Pipe)]
     ]
-    let crossedPipe = null
 
     pipes[0].push(withParams(Pipe, pipes[0][0]))
     props.pipe.up = props.pipe.down = {}
@@ -186,8 +185,8 @@ const createPipe = (ctx, canvas, props) => {
         
                 if(pipe[0].x + pipe[0].width < 0) hasPipeOutOfFrame = true
         
-                if(pipe[0].x + pipe[0].width < props.bird.x && crossedPipe !== pipe[0]) {
-                    crossedPipe = pipe[0]
+                if(pipe[0].x + pipe[0].width < props.bird.x && !pipe[0].crossed) {
+                    pipe[0].crossed = true
                     props.score++
                     if(props.bird.sound) props.bird.sound('point')
                 }
