@@ -10,6 +10,7 @@ export default class {
         this.height = randomBetween(props.pipe.height.min, props.pipe.height.max)
         this.width = body.width
         this.isUpside = !pipe_up
+        this.crossed = false
 
         
         this.pipeBody = new Image(body.width, body.height - head.height)
