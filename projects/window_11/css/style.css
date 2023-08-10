@@ -1,0 +1,55 @@
+body{
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'SegoeUIVF';
+    src: url(../assets/windows/fonts/SegoeUIVF.ttf);
+}
+
+#window{
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    position: relative;
+    font-family: 'SegoeUIVF';
+    font-size: 12px;
+    display: flex;
+    overflow: hidden;
+}
+#window > *{
+    font-size: inherit;
+    font-family: inherit;
+    user-select: none;
+    box-sizing: border-box;
+}
+#window #selection{
+    background-color: #005fff38;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: .1px solid blue;
+    z-index: 100;
+    box-sizing: border-box;
+}
+::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 5px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }

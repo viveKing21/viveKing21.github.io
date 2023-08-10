@@ -1,0 +1,37 @@
+
+--->LUDO WEB GAME<---
+
+Rules:-
+
+1.select mode and pick your colors
+
+2.if you get 6 you can unlock your pieces
+
+3.after completing your turn, turn will be changed to next
+
+4.you can cut someone's pieces if there is single piece and not in safe area
+
+5.you can play again in the case :-
+
+  ->if you cut someone's piece
+  ->if you get number 6
+  ->if you complete the path
+   
+  NOTE:-
+  you will get only one extra change if you cut someone's piece and get
+  6 at the same time.
+
+
+Extras:-
+
+you will always get random numbers when you rotate dice
+
+if you have u have unlocked your pieces but the dice number is more than u need
+it will turn to next player
+
+1 is playable
+
+these all are safe areas
+or
+if there is two same colors pieces cant cut either
+cant cut

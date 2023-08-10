@@ -1,0 +1,20 @@
+[
+    {
+        "id": "sys-1",
+        "name": "Microsoft Store",
+        "icon": "assets/app-icon/ms-store.png",
+        "conext_options": "default-app"
+    },
+    {
+        "id": "sys-2",
+        "name": "Microsoft Edge",
+        "icon": "assets/app-icon/ms-edge.png",
+        "conext_options": "default-app"
+    },
+    {
+        "id": "sys-3",
+        "name": "File Explorer",
+        "icon": "assets/app-icon/file-explorer.png",
+        "conext_options": "default-app"
+    }
+]

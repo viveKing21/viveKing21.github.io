@@ -1,0 +1,294 @@
+{
+    "hero": {
+       "assassin": {
+           "width": 320,
+           "height": 160,
+           "source": {
+               "character": {
+                   "damage": 0.3,
+                   "map": {
+                       "idle": 10,
+                       "gesture": 10,
+                       "walk": 10,
+                       "attack": 10,
+                       "death": 10
+                   },
+                   "padding": {
+                       "character": {
+                           "l": 5,
+                           "r": 8
+                       },
+                       "view":{
+                           "r": 5,
+                           "l": 5
+                       },
+                       "weapon": {
+                           "l": 14,
+                           "t": 8,
+                           "b": 4
+                       }
+                   },
+                   "image": "sprite.png"
+               }
+           }
+       },
+       "ninja": {
+            "width": 320,
+            "height": 160,
+            "source": {
+                "character": {
+                    "damage": 0.3,
+                    "map": {
+                        "idle": 10,
+                        "gesture": 10,
+                        "walk": 10,
+                        "attack": 10,
+                        "death": 10
+                    },
+                    "padding": {
+                        "character": {
+                            "l": 8,
+                            "r": 9
+                        },
+                        "view":{
+                            "l": 8
+                        },
+                        "weapon":{
+                            "t": 15,
+                            "b": 10,
+                            "r": 0,
+                            "l": 9
+                        }
+                    },
+                    "image": "sprite.png"
+                }
+            }
+       },
+       "zombie": {
+            "width": 320,
+            "height": 160,
+            "source": {
+                "character": {
+                    "damage": 0.4,
+                    "map": {
+                        "idle": 10,
+                        "gesture": 10,
+                        "walk": 10,
+                        "attack": 10,
+                        "death": 10
+                    },
+                    "padding": {
+                        "character": {
+                            "l": 8,
+                            "r": 7
+                        },
+                        "weapon": {
+                            "t": 10,
+                            "b": 5,
+                            "l": 18
+                        }
+                    },
+                    "image": "sprite.png"
+                }
+            }
+       },
+       "skeleton": {
+            "width": 320,
+            "height": 160,
+            "source": {
+                "character": {
+                    "damage": 0.3,
+                    "map": {
+                        "idle": 10,
+                        "gesture": 10,
+                        "walk": 10,
+                        "attack": 10,
+                        "death": 10
+                    },
+                    "padding": {
+                        "character": {
+                            "l": 8,
+                            "r": 8
+                        },
+                        "view": {
+                            "l": 6
+                        },
+                        "weapon": {
+                            "t": 5,
+                            "b": 15,
+                            "l": 14
+                        }
+                    },
+                    "image": "sprite.png"
+                }
+            }
+       },
+       "ranger": {
+            "width": 320,
+            "height": 160,
+            "source": {
+                "character": {
+                    "damage": 0.2,
+                    "map": {
+                        "idle": 10,
+                        "gesture": 10,
+                        "walk": 10,
+                        "attack": 10,
+                        "death": 10
+                    },
+                    "padding": {
+                        "character": {
+                            "l": 7,
+                            "r": 8
+                        },
+                        "view": {
+                            "l": 6
+                        },
+                        "weapon": {
+                            "t": 10,
+                            "b": 15,
+                            "l": 15,
+                            "r": -50
+                        }
+                    },
+                    "image": "sprite.png"
+                }
+            }
+       },
+       "warrior": {
+            "width": 320,
+            "height": 160,
+            "source": {
+                "character": {
+                    "damage": 0.4,
+                    "map": {
+                        "idle": 10,
+                        "gesture": 10,
+                        "walk": 10,
+                        "attack": 10,
+                        "death": 10
+                    },
+                    "padding": {
+                        "character": {
+                            "l": 7,
+                            "r": 8
+                        },
+                        "view": {
+                            "l": 6
+                        },
+                        "weapon": {
+                            "t": 13,
+                            "b": 10,
+                            "l": 15
+                        }
+                    },
+                    "image": "sprite.png"
+                }
+            }
+       },
+       "minotaur": {
+            "width": 480,
+            "height": 239,
+            "source": {
+                "character": {
+                    "damage": 0.4,
+                    "map": {
+                        "idle": 10,
+                        "gesture": 10,
+                        "walk": 10,
+                        "attack": 10,
+                        "death": 10
+                    },
+                    "padding": {
+                        "character": {
+                            "l": 7,
+                            "r": 10,
+                            "t": 15
+                        },
+                        "view": {
+                            "l": 0,
+                            "r": 0,
+                            "t": 5
+                        },
+                        "weapon": {
+                            "t": 6,
+                            "l": 5
+                        }
+                    },
+                    "image": "sprite.png"
+                }
+            }
+       },
+       "angel": {
+           "width": 320,
+           "height": 160,
+           "source": {
+               "character": {
+                   "damage": 0.3,
+                   "map": {
+                       "idle": 10,
+                       "gesture": 10,
+                       "walk": 10,
+                       "attack": 10,
+                       "death": 10
+                   },
+                   "padding": {
+                       "character": {
+                           "l": 8,
+                           "r": 8
+                       },
+                       "view": {
+                           "l": 8
+                       },
+                       "weapon": {
+                           "t": 10,
+                           "b": 12,
+                           "l": 12,
+                           "r": -60
+                       }
+                   },
+                   "image": "sprite.png"
+               }
+           }
+       }
+    },
+    "enemy": {
+        "snake": {
+            "width": 320,
+            "height": 160,
+            "source": {
+                "character": {
+                    "damage": 0.2,
+                    "dir": -1,
+                    "map": {
+                        "idle": 10,
+                        "gesture": 10,
+                        "walk": 10,
+                        "attack": 10,
+                        "death": 10
+                    },
+                    "padding": {
+                        "view": {
+                            "l": 3,
+                            "r": 8,
+                            "t": 20
+                        },
+                        "character": {
+                            "l": 8,
+                            "r": 8,
+                            "t": 20
+                        },
+                        "weapon":{
+                            "l": 2,
+                            "t": 3,
+                            "r": 7,
+                            "b": 4
+                        }
+                    },
+                    "image": "sprite.png"
+                }
+            }
+          }
+    }
+
+}

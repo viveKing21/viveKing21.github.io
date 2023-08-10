@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans:wght@600&display=swap');
+body{
+    font-family: 'Open Sans', sans-serif;
+    overflow: hidden;
+}
+.mainContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.container{
+    height: 400px;
+    width: 400px;
+    background-color:white;
+    border:1px solid black;
+    display: grid;
+    grid-template-columns: repeat(15,1fr);
+    grid-template-rows: repeat(15,1fr);
+    position: relative;
+}
+.box{
+    background:white;
+    display: flex;
+    flex: 1;
+    box-shadow:inset 0 0 0px 0.1px black;
+    align-items: center;
+    justify-content: center;
+    
+}
+.home{
+    grid-row: span 6;
+    grid-column: span 6;
+    background-color: white;
+    border:20px solid #00e100;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    position: relative;
+}
+.home.red{
+    border:20px solid red;
+}
+.home.yellow{
+    border:20px solid yellow;
+}
+.home.blue{
+    border:20px solid #008eff;
+}
+.middle{
+    grid-row: span 3;
+    grid-column: span 3;
+    background-color: skyblue;
+    position: relative;
+}
+.home > div:not(:first-child)
+{
+    height: 30px;
+    width: 30px;
+    background-color: #00e100;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.home.red > div,.middle > div:nth-child(1),[color='red-path']
+{background-color: red;}
+.home.yellow > div,.middle > div:nth-child(4),[color='yellow-path']
+{background-color: yellow;}
+.home.blue > div,.middle > div:nth-child(3),[color='blue-path']
+{background-color: #008eff;}
+
+.middle > div{
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    height: 50%;
+    width: 100%;
+    position: absolute;
+    background-color: #00e100;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.middle > div:nth-child(1)
+{transform: rotateX(-180deg);top: 0;}
+.middle > div:nth-child(2)
+{transform: rotate(90deg);left: -20;top:20}
+.middle > div:nth-child(3)
+{transform: rotate(-90deg);right: -20;top:20}
+.middle > div:nth-child(4)
+{bottom: 0;}
+[color='green-path']{
+    background-color: #00e100;
+}
+.fa-arrow-up{
+   color:yellow;
+   text-shadow: 0 0 2px #a7a7a7;
+}
+.fa-arrow-down{
+    color:red;
+    text-shadow: 0 0 2px #a7a7a7;
+}
+.fa-arrow-left{
+    color:#008eff;
+    text-shadow: 0 0 2px #a7a7a7;
+}
+.fa-arrow-right{
+    color:#00e100;
+    text-shadow: 0 0 2px #a7a7a7;
+}
+.fa-star{
+    color:#e8e8e8
+}
+.ludo{
+    height: 100px;
+    width: 100px;
+    margin: auto;
+    margin-top: 100px;
+}
+.wrapper{
+    height:100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+}
+.cube{
+    height: 50px;
+    width: 50px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform-origin: center;
+    
+}
+.cube > img{
+    position: absolute;
+    height:100%;
+    width: 100%;
+}
+.cube > img:nth-child(2){
+    transform: translateZ(0px);
+}
+.cube > img:nth-child(2){
+    transform-origin: left;
+    transform: rotateY(-90deg);
+}
+.cube > img:nth-child(3){
+    transform-origin: right;
+    transform: rotateY(90deg);
+}
+.cube > img:nth-child(4){
+    transform-origin: top;
+    transform: rotateX(90deg);
+}
+.cube > img:nth-child(5){
+    transform-origin: bottom;
+    transform: rotateX(-90deg);
+}
+.cube > img:nth-child(6){
+    transform: translateZ(50px)
+}
+.Animate_play{
+    animation:loop 1s infinite linear; 
+    animation-play-state: running;
+}
+.Animate_pause{
+    animation:loop 0s infinite linear; 
+    animation-play-state: paused;
+}
+@keyframes loop
+{
+    from{transform: rotate3d(1, 1, 1, 0deg) translateX(0px) translateY(0px);}
+    50%{transform: rotate3d(1, 1, 1, 180deg) translateX(-25px) translateY(-25px);}
+    to{transform: rotate3d(1, 1, 1, 360deg) translateX(0px) translateY(0px);}
+}
+.yellow-piece,.blue-piece,.green-piece,.red-piece{
+    height: 20px;
+    width: 20px;
+    background: yellow;
+    border-radius: 20px;
+    box-shadow:0 0 2px #4d4d4d;
+    position: absolute;
+    z-index: 1;
+}
+.blue-piece{
+    background-color: #008eff;
+}
+.green-piece{
+    background-color: #00e100;
+}
+.red-piece{
+    background-color: red;
+}
+.box > i{
+    position: absolute;
+}
+.blue-winner,.red-winner,.yellow-winner,.green-winner{
+    background:#ffffff9c !important;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 11;
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0;
+}
+.Won{
+    animation:.5s won 1 ease-in-out;
+    pointer-events: auto;
+    user-select: none;
+    opacity:1
+}
+@keyframes won{
+from{transform: scale(.2)}
+to{transform: scale(1)}
+}
+.screen{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: #00000070;
+    top: 0;
+    left: 0;
+    z-index: 12;
+    align-items: center;
+    justify-content: center;
+    transform: translateZ(50px) scale(1.5);
+    display: none;
+    opacity: 0;
+}
+.selectBox{
+    height: 65%;
+    min-width: 11cm;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.selectorBtn{
+    max-height:50;
+    flex-grow: 1;
+    background: #f0f0f0;
+    border-radius: 5px;
+    align-items: center;
+    display: flex;
+    padding-left: 15;
+    padding-right: 15;
+    margin-top: 10;
+    cursor: pointer;
+}
+#selectColor{
+    max-height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10;
+}
+#selectColor:before{
+    content:'';
+    min-height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    border:2px solid var(--color);
+}
+#selectColor:after{
+    content:attr(name);
+    font-size: small;
+    margin-top: 5;
+}
+#startGame{
+    display: flex;
+    border:none;
+    background-color: #2c6edd;
+    height: 40px;
+    font-size: 17;
+    color: white;
+    border-radius: 5px;
+    outline: none;
+    transition:.3s;
+    justify-content: center;
+}
+#startGame:active{
+    opacity: .5;
+}
+.selectedColor:before{
+    background-color: var(--color);
+}
+.loader{
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: medium;
+    display: none;
+}
+.loader > img{
+    height: 40px;
+    animation: rotation 1s infinite;
+    margin-right: 20;
+}
+@keyframes rotation{
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}

@@ -1,0 +1,189 @@
+#window > #startmenu{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    min-width: 500px;
+    width: 40vw;
+    height: 85%;
+    margin-bottom: 10px;
+    background: rgba(245, 245, 245, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+    box-shadow: 0 0 2px 0px #808080a1;
+    transform: translateX(-50%) translateY(100vh);
+    display: flex;
+    flex-direction: column;
+}
+#window > #startmenu #padbox{
+    padding: 30px;
+    flex: 1;
+}
+#window > #startmenu #search{
+    height: 40px;
+    width: 100%;
+    display: flex;
+    background-color: white;
+    box-sizing: border-box;
+    border-radius: 5px;
+    align-items: center;
+    gap: 5px;
+    padding: 0 10px;
+    border-bottom: 3px solid white;
+    border-bottom-color: #0070d0;
+    box-shadow: 0 0 2px #0000004f;
+}
+#window > #startmenu #search div svg{
+    height: 20px;
+    width: 20px;
+    fill: red;
+    margin-top: 5px;
+}
+#window > #startmenu #search input{
+    flex: 1;
+    height: 100%;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+#window > #startmenu :is(#pinned-container, #recommend-container){
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+#window > #startmenu :is(#pinned-container, #recommend-container) #head{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    align-self: center;
+}
+#window > #startmenu :is(#pinned-container, #recommend-container) #head h3{
+    margin: 0;
+}
+#window > #startmenu :is(#pinned-container, #recommend-container) #option-button{
+    display: flex;
+    background: rgb(255 255 255 / 78%);
+    padding: 3px 5px;
+    border-radius: 4px;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 0.5px 2px #0000005e;
+}
+#window > #startmenu :is(#pinned-container, #recommend-container) #option-button img{
+    height: 15px;
+    width: 15px;
+    transform: rotate(90deg);
+}
+#window > #startmenu :is(#pinned-container, #recommend-container) #option-button:hover{
+    background: rgb(255 255 255 / 50%);
+}
+#window > #startmenu #pinned-container #pinned-app{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    grid-auto-rows: minmax(80px, 1fr);
+    margin-top: 15px;
+    max-height: calc(80px * 2);
+    overflow-y: auto;
+}
+#window > #startmenu #pinned-container #pinned-app #startmenu-app{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-equal;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+    border-radius: 5px;
+
+}
+#window > #startmenu :is(#pinned-container, #recommend-container) :is(#pinned-app, #recommend-data) :is(#startmenu-app, #startmenu-recommend-data):hover{
+    background: rgb(255 255 255 / 78%);
+}
+#window > #startmenu :is(#pinned-container, #recommend-container) :is(#pinned-app, #recommend-data) :is(#startmenu-app, #startmenu-recommend-data) img{
+    height: 35px;
+    width: 35px;
+    transition: transform 200ms;
+}
+#window > #startmenu #pinned-container #pinned-app #startmenu-app span{
+    text-align: center;
+}
+#window > #startmenu :is(#pinned-container, #recommend-container) :is(#pinned-app, #recommend-data) :is(#startmenu-app, #startmenu-recommend-data):active img{
+    transform: scale(.9);
+}
+#window > #startmenu #recommend-data{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 50px;
+    margin-top: 15px;
+    max-height: calc(50px * 3);
+    overflow: hidden;
+}
+#window > #startmenu  #startmenu-recommend-data{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+}
+#window > #startmenu  #startmenu-recommend-data span{
+    font-size: 12px;
+    color: #686868;
+}
+#window > #startmenu  #profile-container{
+    border-top: 1px solid rgb(192 192 192);
+}   
+#window > #startmenu  #profile-container{
+    display: flex;
+    padding: 0 30px;
+    align-items: center;
+    height: 70px;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+#window > #startmenu  #profile-container > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 15px;
+    border-radius: 5px;
+    transition: transform 200ms;
+    gap: 10px;
+    height: 44px;
+    box-sizing: border-box;
+}
+#window > #startmenu  #profile-container > div:first-child img{
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+}
+#window > #startmenu  #profile-container > div:last-child{
+    width: 44px;
+}
+#window > #startmenu  #profile-container > div:last-child img{
+    height: 16px;
+}
+#window > #startmenu  #profile-container > div:hover{
+    background: rgb(255 255 255 / 78%);
+}
+#window > #startmenu[visible=false]{
+    animation: hide-menu 200ms 1 forwards ease-out;
+}
+@keyframes hide-menu {
+    from{
+        transform: translateX(-50%) translateY(0);
+    }
+    to{
+        transform: translateX(-50%) translateY(100vh);
+    }
+}
+#window > #startmenu[visible=true]{
+    animation: show-menu 200ms 1 forwards ease-in;
+}
+@keyframes show-menu {
+    from{
+        transform: translateX(-50%) translateY(100vh);
+    }
+    to{
+        transform: translateX(-50%) translateY(0);
+    }
+}

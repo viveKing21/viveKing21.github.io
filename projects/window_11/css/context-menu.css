@@ -1,0 +1,141 @@
+#contextmenu{
+    position: absolute;
+    width: 220px;
+    background: white;
+    border-radius: 5px;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    box-shadow: 0 0 2px 0px #808080a1;
+    overflow: hidden;
+}
+#contextmenu[visible=false]{
+    opacity: 0;
+    pointer-events: none;
+}
+#contextmenu #contextmenu-tiles-list{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    position: relative;
+    padding: 6px;
+}
+#contextmenu #contextmenu-tiles-list::after{
+    position: absolute;
+    content: '';
+    height: .1px;
+    width: 98%;
+    background-color: rgb(216 216 216);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: var(--border, default);
+}
+#contextmenu #contextmenu-tiles-list #contextmenu-tile{
+    display: flex;
+    height: 20px;
+    align-items: center;
+    border-radius: 4px;
+    padding: 0 3px;
+}
+#contextmenu #contextmenu-tiles-list #contextmenu-tile [contextmenu-iconbox]{
+    width: 25px;
+    display: flex;
+    align-items: center;
+}
+#contextmenu #contextmenu-tiles-list #contextmenu-tile [contextmenu-iconbox] img{
+    height: var(--icon_size, 17px);
+    width: var(--icon_size, 17px);
+}
+#contextmenu #contextmenu-tiles-list #contextmenu-tile [contextmenu-label]{
+    flex: 1;
+}
+#contextmenu #contextmenu-tiles-list #contextmenu-tile[type='dropdown'] [contextmenu-sidebox]{
+    display: flex;
+    align-items: center;
+}
+#contextmenu #contextmenu-tiles-list #contextmenu-tile[type='dropdown'] [contextmenu-sidebox]{
+    height: 18px;
+    width: 18px;
+    background-image: url('../assets/windows/icons/arrow-rt.png') ;
+    background-size: cover;
+}
+#contextmenu:not([new_ui=true]) #contextmenu-tiles-list #contextmenu-tile[type='dropdown']:hover [contextmenu-sidebox]{
+    background-image: url('../assets/windows/icons/arrow-rt-white.png') ;
+}
+#contextmenu:not([new_ui=true]) #contextmenu-tiles-list #contextmenu-tile:hover{
+    background-color: rgb(40, 115, 228);
+}
+#contextmenu:not([new_ui=true]) #contextmenu-tiles-list #contextmenu-tile:hover{
+    color: white;
+}
+#contextmenu #contextmenu-tiles-list #contextmenu-tile[disabled=true]{
+    color: gray;
+}
+#contextmenu #contextmenu-tiles-list #contextmenu-tile[disabled=true]:hover{
+    background-color: rgb(245, 245, 245);
+}
+#contextmenu[new_ui=true]{
+    background: rgba(245, 245, 245, 0.9);
+    backdrop-filter: blur(10px);
+    width: 300px;
+}
+#contextmenu[new_ui=true] #contextmenu-tiles-list #contextmenu-tile{
+    height: 30px;
+    font-size: 13.5px;
+}
+#contextmenu[new_ui=true] #contextmenu-tiles-list #contextmenu-tile [contextmenu-label]{
+    font-weight: normal !important;
+}
+#contextmenu[new_ui=true] #contextmenu-tiles-list #contextmenu-tile [contextmenu-iconbox]{
+    width: 30px;
+    padding: 0 3px;
+}
+#contextmenu[new_ui=true] #contextmenu-tiles-list #contextmenu-tile [contextmenu-iconbox] img{
+    height: var(--icon_size, 24px);
+    width: var(--icon_size, 24px);
+}
+#contextmenu[new_ui=true] #contextmenu-tiles-list #contextmenu-tile[type=button] [contextmenu-sidebox]{
+    min-width: 60px;
+    color: #000000b8;
+    font-size: 13px;
+}
+#contextmenu[new_ui=true] #contextmenu-tiles-list #contextmenu-tile:hover{
+    background-color: rgba(0, 0, 0, .03);
+    color: black;
+}
+#contextmenu[new_ui=true] #quick-tools{
+    display: flex;
+    position: relative;
+    padding: 5px 7px;
+    gap: 3px;
+}
+#contextmenu[new_ui=true] #quick-tools #quick-tool-button{
+    height: 30px;
+    width: 30px;
+    padding: 3px;
+    border-radius: 3.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#contextmenu[new_ui=true] #quick-tools #quick-tool-button:hover{
+    background-color: rgba(0, 0, 0, .03);
+}
+#contextmenu[new_ui=true] #quick-tools #quick-tool-button img{
+    height: 24px;
+    width: 24px;
+}
+#contextmenu #quick-tools::after{
+    position: absolute;
+    content: '';
+    height: .1px;
+    width: 100%;
+    background-color: rgb(216 216 216);
+    left: 0;
+}
+#contextmenu[direction-vertical=up] #quick-tools{order: 1;}
+#contextmenu[direction-vertical=up] #quick-tools::after{top: 0;}
+#contextmenu[direction-vertical=down] #quick-tools::after{bottom: 0;}

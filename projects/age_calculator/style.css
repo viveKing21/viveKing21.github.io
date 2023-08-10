@@ -1,0 +1,168 @@
+	@import url(https://fonts.googleapis.com/css?family=Odibee+Sans|Open+Sans&display=swap);
+	.container
+	{
+		width:400px;
+		background:#ffffff;
+		border:1px solid #e2e2e2;
+		margin:auto;
+		margin-top:100px;
+		padding:10px;
+		padding-top:0;
+		font-family: 'Open Sans', sans-serif;
+		padding-bottom:9px;
+	}
+	h1
+	{
+		text-align:center;
+		font-family: 'Odibee Sans', cursive;
+		letter-spacing: 2px;
+		color: #757575
+	}
+	h1 span
+	{
+		color:#ff4343
+	}
+	input
+	{
+		width:100%;
+		height:20px;
+		margin-top:5px;
+		padding:5px;
+		padding-top:10px;
+		padding-bottom:10px;
+		color:#838383;
+		border:1px solid #e2e2e2;
+		color:#969696
+	}
+	form
+	{
+		font-size:15px;
+		font-weight:bold;
+		color:#606060;
+		letter-spacing:1px
+	}
+	#btn
+	{
+		height:30px;
+		padding:0px;
+		background:skyblue;
+		border:none;
+		color:white;
+		font-size:15px;
+		margin-top:30px
+	}
+	#age
+	{
+		width:calc(100% - 2px);
+		height:150px;
+		background:;
+		border:1px solid #e2e2e2;
+		margin-top:20px;
+		overflow:hidden;
+		position:relative;
+		padding-bottom:20px
+	}
+	#age h4
+	{
+		text-align:center;
+		padding-top:0px;
+	}
+	#age div
+	{
+      width:calc(100%/3);
+      background:;
+      float:left;
+      text-align:center;
+	}
+	#age div span
+	{
+	  color:skyblue;
+      font-size:30px;
+	}
+	.extras
+	{
+		padding:1px;
+		width:30% !important;
+		background:#f4f4f4;
+		color:#919191;
+		border:1px solid #e2e2e2;
+		font-size:10px;
+		position:absolute;
+		bottom:-20;
+		right:10;
+		opacity:0;
+		transition:0.5s
+	}
+	input[type=submit]
+	{
+       outline:none;
+	}
+	input[type=submit]:hover
+	{
+		background-color:#53c4f2 !important
+	}
+	body
+	{
+		padding-bottom:100px
+	}
+	.Nb
+	{
+
+		width:50% !important;
+		background:
+	}
+	.Nb span
+	{
+		padding-right:10px;
+		margin-top:10px
+	}
+	.dayofnb
+	{
+      font-size:10px;
+      padding:5px;
+      position: absolute;
+      bottom:0;
+      left:calc(50% - 75px/2);
+      width:75px !important;
+      text-transform: capitalize;
+	}
+	table
+	{
+		width:100%;
+		font-family: 'Open Sans', sans-serif;
+		color: #606060;
+		font-weight: bold
+	}
+	table td
+	{
+		width:50%;
+		text-align: right;
+		font-size:14px
+	}
+	[data-value],.showday
+	{
+		color: skyblue;
+		text-align:left;
+		padding-left: 20px
+	}
+	.dropdown
+	{
+		width:50px;
+		padding:;
+		background:#f4f4f4;
+		color:#919191;
+		border:1px solid #e2e2e2;
+		font-size:10px;
+		text-align: center;
+		position: absolute;
+		margin-top:4px;
+		left:calc(50% - 25px);
+		cursor: pointer;
+		transition:0.2s;
+		display:none
+	}
+	.dropdown:hover
+	{
+		box-shadow:2px 1px 3px #ececec
+	}
+	.on{display: none}
