@@ -1,4 +1,4 @@
-import background from "../data/background.json" assert {type: "json"}
+import background from "../data/background.js"
 
 class Background{
     constructor(bgName){

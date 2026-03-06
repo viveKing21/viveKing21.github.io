@@ -1,4 +1,4 @@
-{
+export default {
     "count": {
         "height": 36,
         "width": 24,

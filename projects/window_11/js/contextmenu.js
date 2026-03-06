@@ -1,4 +1,4 @@
-import ContextData from '../assets/windows/context/contextdata.json' assert {type: "json"}
+import ContextData from '../assets/windows/context/contextdata.js'
 
 class ContextMenu{
     constructor(win){

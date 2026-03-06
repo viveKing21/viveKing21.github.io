@@ -10,7 +10,6 @@ export default class {
         this.height = randomBetween(props.pipe.height.min, props.pipe.height.max)
         this.width = body.width
         this.isUpside = !pipe_up
-        this.crossed = false
 
         
         this.pipeBody = new Image(body.width, body.height - head.height)
@@ -24,6 +23,7 @@ export default class {
             let gap = randomBetween(props.pipe.v_gap.min, props.pipe.v_gap.max)
             this.y = Math.min(props.ground - props.pipe.height.min, pipe_up.height + gap)
             this.height = props.ground - this.y
+            console
         }
     }
     draw(ctx, canvas, props){

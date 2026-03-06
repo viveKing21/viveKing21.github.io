@@ -1,4 +1,4 @@
-import characters from "../data/characters.json" assert {type: "json"}
+import characters from "../data/characters.js"
 
 class Character{
     DIED = false

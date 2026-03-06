@@ -4,9 +4,9 @@ import Desktop from './desktop.js';
 import Setting from "./setting.js"
 import Taskbar from "./taskbar.js";
 import Startmenu from './startmenu.js';
-import Shortcuts from "../assets/windows/shortcuts/shortcuts.json" assert {type: 'json'}
-import SystemApp from '../assets/app/system.json' assert {type: 'json'}
-import InstalledApp from '../assets/app/installed.json' assert {type: 'json'}
+import Shortcuts from "../assets/windows/shortcuts/shortcuts.js"
+import SystemApp from '../assets/app/system.js'
+import InstalledApp from '../assets/app/installed.js'
 
 class Window{
     constructor(){

@@ -1,4 +1,4 @@
-import assets from '../asset_info.json' assert {type: 'json'}
+import assets from '../asset_info.js'
 import { defaultParams, minmax } from './utils.js'
 import { control as GameControl, createBackground, createBird, createPipe, createCount, getDefaultProps, loadAudio } from './creates.js'
 
@@ -24,7 +24,7 @@ const bird_prop = {
 const pipe_prop = {
     height: { min: 0, max: 0}, //auto-change with levels
     v_gap: { min: 0, max: 0},
-    h_gap: { min: 500,max: 500},
+    h_gap: { min: 0,max: 0},
     assets: {
         pipe: assets.pipe.green
     }
@@ -62,7 +62,6 @@ function render(){
     pipes.update()
 
     control.showScreen()
-
 
     if(last_lvl_increased_at !== props.score && props.score > 0){
         props.level += 0.05
